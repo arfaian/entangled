@@ -98,7 +98,7 @@ module Entangled
         channels << member_channel
 
         # Add nested channels for each parent
-        parents.each do |parent|
+        parents.reject(&:nil?).each do |parent|
           # Only recusively add collection channel
           # for child
           if tail.empty?
